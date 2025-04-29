@@ -2,7 +2,7 @@ package com.example.lexynapse.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.firebase.vertexai.GenerativeModel
+import com.google.ai.client.generativeai.GenerativeModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -31,7 +31,7 @@ constructor(
         _response.value = ApiResponse.Loading
         viewModelScope.launch {
             flow {
-                val result = genModel.generateContent("For this $word, You have to give two things " +
+                val result = genModel.generateContent("For the \"$word\", You have to give two things " +
                         "Give me the definition of this word and what it is like noun, adverb etc. " +
                         "Next is generate me 5 sentences with this word").text ?: "No response"
                 emit(ApiResponse.Success(result))

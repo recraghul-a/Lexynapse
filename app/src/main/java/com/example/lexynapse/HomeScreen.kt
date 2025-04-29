@@ -5,6 +5,7 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -23,6 +24,7 @@ enum class Des {
 @Composable
 fun HomeScreen(
     lexiViewModel: LexiViewModel = viewModel(factory = LexiViewModel.Factory),
+    genViewModel: GenViewModel = hiltViewModel()
 ) {
     val navController = rememberNavController()
     val context = LocalContext.current
@@ -49,7 +51,7 @@ fun HomeScreen(
         ) {
             backStackEntry ->
             val itemId:Int = backStackEntry.arguments?.getInt("itemId")!!
-            DetailScreen(itemId, lexiViewModel, onBack = {
+            DetailScreen(itemId, lexiViewModel, genViewModel,onBack = {
                 navController.popBackStack()
             }, onDelClick = { wordCard ->
                 if (wordCard != null) {

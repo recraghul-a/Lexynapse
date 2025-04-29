@@ -1,3 +1,5 @@
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -5,6 +7,8 @@ plugins {
     id("com.google.devtools.ksp") version "2.0.21-1.0.28"
     id("com.google.dagger.hilt.android")
 }
+
+
 
 android {
     namespace = "com.example.lexynapse"
@@ -19,7 +23,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -42,12 +45,12 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.compose.v100alpha03)
+    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+
 //    ksp(libs.hilt.compiler)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.vertexai)
     implementation(libs.androidx.room.runtime)
     implementation(libs.ui)
     implementation(libs.material3)

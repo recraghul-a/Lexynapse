@@ -1,8 +1,8 @@
 package com.example.lexynapse.di
 
-import com.google.firebase.Firebase
-import com.google.firebase.vertexai.GenerativeModel
-import com.google.firebase.vertexai.vertexAI
+import androidx.core.os.BuildCompat
+import com.google.ai.client.generativeai.BuildConfig
+import com.google.ai.client.generativeai.GenerativeModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,6 +16,10 @@ object GenerativeModelModule {
     @Provides
     @Singleton
     fun provideGenerativeModel(): GenerativeModel {
-        return Firebase.vertexAI.generativeModel("gemini-2.0-flash")
+        val apiKey = "API_KEY_HERE_PLS_YOURS_MIND_THAT"
+        return GenerativeModel(
+            modelName = "gemini-2.0-flash",
+            apiKey = apiKey
+        )
     }
 }

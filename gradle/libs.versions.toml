@@ -1,11 +1,15 @@
 [versions]
 agp = "8.9.2"
 firebaseBom = "33.13.0"
+generativeaiAndroid = "0.3.1"
+generativeaiAndroidVersion = "0.7.0"
 hiltAndroid = "2.56.1"
 hiltAndroidCompiler = "2.56.1"
 hiltAndroidVersion = "2.51"
 hiltCompiler = "2.56.1"
 hiltNavigationCompose = "1.3.0"
+hiltNavigationComposeVersion = "1.0.0-alpha03"
+hiltNavigationFragment = "1.2.0"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -18,10 +22,13 @@ navigationCompose = "2.8.9"
 roomRuntime = "2.7.0"
 ui = "1.7.8"
 material3 = "1.3.1"
+generativeai = "0.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+androidx-hilt-navigation-compose-v100alpha03 = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationComposeVersion" }
+androidx-hilt-navigation-fragment = { module = "androidx.hilt:hilt-navigation-fragment", version.ref = "hiltNavigationFragment" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
@@ -29,6 +36,8 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRunt
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-vertexai = { module = "com.google.firebase:firebase-vertexai" }
+generativeai-android = { module = "com.google.ai.client.generativeai:generativeai-android", version.ref = "generativeaiAndroid" }
+generativeai-android-v070 = { module = "com.google.ai.client.generativeai:generativeai-android", version.ref = "generativeaiAndroidVersion" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
 hilt-android-v251 = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidVersion" }
@@ -48,6 +57,7 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
 material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+generativeai = { group = "com.google.ai.client.generativeai", name = "generativeai", version.ref = "generativeai" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
